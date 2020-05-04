@@ -1,5 +1,6 @@
 # web-portal-system
-个人门户web项目，vue实战项目
+
+## Project setup
 ```
 npm install
 ```
@@ -12,11 +13,6 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
-```
-
-### Run your tests
-```
-npm run test
 ```
 
 ### Lints and fixes files
