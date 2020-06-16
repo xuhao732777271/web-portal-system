@@ -1,29 +1,48 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-
 Vue.use(VueRouter)
 
-  const routes = [
+import { login } from './login/index'
+import { register } from './register/index'
+const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'home',
+    component: () => import ('@/views/Home.vue'),
+    meta: { requireAuth: true },
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  login,
+  register
 ]
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
   routes
 })
 
+// 路由守卫
+router.beforeEach((to, from, next) => {
+  // 1、判断该路由是否需要登录权限
+  if (to.meta.requireAuth) {
+    // 2、判断本地是否存在access_token
+    if (JSON.parse(sessionStorage.getItem('islogin'))) {
+      next();
+    } else {
+      // 3、进入登录页面
+      next({
+        path: '/login'
+      })
+    }
+  } else {
+    next();
+  }
+  // 如果路由直接跳转到登录，判断本地 token 是否存在，存在不允许直接跳转
+  if (to.fullPath === '/login') {
+    if (JSON.parse(sessionStorage.getItem('islogin'))){
+      next({
+        path: from.fullPath
+      })
+    }
+  }
+})
 export default router

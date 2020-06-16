@@ -1,0 +1,711 @@
+/*!
+* @名称：define.scss
+* @功能：重设浏览器默认样式
+*/
+
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+
+html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+input,
+textarea,
+p,
+th,
+td,
+button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    width: 100%;
+    /* 兼容饿了吗弹出层跳动问题 */
+    padding: 0 !important;
+    overflow: auto !important;
+}
+
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+
+body,
+button,
+input,
+select,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lantinghei SC';
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: normal;
+}
+
+
+/* 去掉 table cell 的边距并让其边重合 */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0;
+    empty-cells: show;
+    font-size: 100%;
+}
+
+
+/* ie bug：th 不继承 text-align */
+
+th {
+    text-align: inherit;
+}
+
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+
+iframe {
+    display: block;
+}
+
+
+/* 去掉列表前的标识，li 会继承 */
+
+ol,
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+}
+
+i {
+    font-style: normal;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+
+/* 清除浮动 */
+
+.clearfix:after {
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: ".";
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clear {
+    clear: both;
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.clr:after {
+    clear: both;
+    display: block;
+    height: 0;
+    content: "";
+}
+
+.pr {
+    position: relative;
+}
+
+.tc {
+    text-align: center;
+}
+
+.tl {
+    text-align: left;
+}
+
+.tr {
+    text-align: right;
+}
+
+
+/* 设置显示和隐藏，通常用来与 js 配合 */
+
+.hide {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+
+/* 布局 */
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-item {
+    flex: 1;
+}
+
+
+/* 字体*/
+
+.f48 {
+    font-size: 48px;
+}
+
+.f32 {
+    font-size: 32px;
+}
+
+.f28 {
+    font-size: 28px;
+}
+
+.f22 {
+    font-size: 22px;
+}
+
+.f24 {
+    font-size: 24px;
+}
+
+.f20 {
+    font-size: 20px;
+}
+
+.f18 {
+    font-size: 18px;
+}
+
+.f16 {
+    font-size: 16px;
+}
+
+.f14 {
+    font-size: 14px;
+}
+
+.f12 {
+    font-size: 12px;
+}
+
+.f-weight {
+    font-weight: 600;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+// 高度
+.h50 {
+    height: 50px !important;
+}
+
+.h100 {
+    height: 100px !important;
+}
+
+.h120 {
+    height: 120px !important;
+}
+
+.h150 {
+    height: 150px !important;
+}
+
+.h200 {
+    height: 200px !important;
+}
+
+.h220 {
+    height: 220px !important;
+}
+
+.h230 {
+    height: 230px !important;
+}
+
+.h240 {
+    height: 240px !important;
+}
+
+.h250 {
+    height: 250px !important;
+}
+
+.h260 {
+    height: 260px !important;
+}
+
+.h270 {
+    height: 270px !important;
+}
+
+.h280 {
+    height: 280px !important;
+}
+
+.h290 {
+    height: 290px !important;
+}
+
+.h300 {
+    height: 300px !important;
+}
+
+.h320 {
+    height: 320px !important;
+}
+
+.h350 {
+    height: 350px !important;
+}
+
+.h400 {
+    height: 400px !important;
+}
+
+.h500 {
+    height: 500px !important;
+}
+
+.h550 {
+    height: 550px !important;
+}
+
+.h600 {
+    height: 600px !important;
+}
+
+.h1000 {
+    height: 1000px !important;
+}
+
+// mg
+.mg-10 {
+    margin: 10px !important;
+}
+
+.mg-15 {
+    margin: 15px !important;
+}
+
+.mg-20 {
+    margin: 20px !important;
+}
+
+.mg-50 {
+    margin: 50px !important;
+}
+
+.mglr-10 {
+    margin: 0 10px !important;
+}
+
+.mglr-15 {
+    margin: 0 15px !important;
+}
+
+.mglr-20 {
+    margin: 0 20px !important;
+}
+
+.mgl-10 {
+    margin-left: 10px !important;
+}
+
+.mgl-15 {
+    margin-left: 15px !important;
+}
+
+.mgl-20 {
+    margin-left: 20px !important;
+}
+
+.mgl-30 {
+    margin-left: 30px !important;
+}
+
+.mgr-10 {
+    margin-right: 10px !important;
+}
+
+.mgr-15 {
+    margin-right: 15px !important;
+}
+
+.mgr-20 {
+    margin-right: 20px !important;
+}
+
+.mgr-30 {
+    margin-right: 30px !important;
+}
+
+.mgr-50 {
+    margin-right: 50px !important;
+}
+
+.mgr-80 {
+    margin-right: 80px !important;
+}
+
+.mgr-100 {
+    margin-right: 100px !important;
+}
+
+.mgr-120 {
+    margin-right: 120px !important;
+}
+
+.mgt-10 {
+    margin-top: 10px !important;
+}
+
+.mgt-15 {
+    margin-top: 15px !important;
+}
+
+.mgt-20 {
+    margin-top: 20px !important;
+}
+
+.mgt-30 {
+    margin-top: 30px !important;
+}
+
+.mgt-40 {
+    margin-top: 40px !important;
+}
+
+.mgt-50 {
+    margin-top: 50px !important;
+}
+
+.mgb-0 {
+    margin-bottom: 0px !important;
+}
+
+.mgb-20 {
+    margin-bottom: 20px !important;
+}
+.pd-10{
+    padding:10px !important;
+}
+.pdl-10{
+    padding-left: 10px !important;
+}
+.pdl-15{
+    padding-left: 15px !important;
+}
+.pdl-20{
+    padding-left: 20px !important;
+}
+.pdt-10 {
+    padding-top: 10px !important;
+}
+
+.pdt-15 {
+    padding-top: 15px !important;
+}
+
+
+/*全局路由进度条*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input {
+    -webkit-appearance: none;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    -webkit-appearance: none;
+}
+
+textarea {
+    -webkit-appearance: none;
+    resize: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input:focus {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+.white {
+    color: #ffffff !important;
+}
+
+.gray {
+    color: #9e9e9e !important;
+}
+
+.green {
+    color: #29B54F !important;
+}
+
+.orange {
+    color: #F89C21 !important;
+}
+
+.red {
+    color: #FF5757 !important;
+}
+
+.blue {
+    color: #5FB9FF !important;
+}
+
+.text-color {
+    color: #00e7ff;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+@keyframes scaleDraw {
+    0% {
+        transform: scale(0.5);
+        /*开始为原始大小*/
+    }
+    90% {
+        transform: scale(1.1);
+        /*开始为原始大小*/
+    }
+    100% {
+        transform: scale(1);
+        /*开始为原始大小*/
+    }
+}
+
+// 表格样式 结构
+.table {
+    width: 100%;
+    height: calc(100% - 20px);
+    li {
+        display: flex;
+        justify-content: flex-start;
+        text-align: center;
+        align-items: center;
+        padding: 0 10px;
+        div {
+            flex: 1;
+        }
+        .th-l,
+        .td-l {
+            text-align: left;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+        }
+        &.th {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: normal;
+            span {
+                font-size: 12px;
+            }
+        }
+        &.td {
+            color: #00f9ff;
+            font-size: 16px;
+        }
+        &:nth-of-type(2n-1) {
+            background: #0d2451;
+        }
+        &:hover {
+            background: #103889;
+        }
+    }
+}
+
+// 加载...
+.dot {
+    display: inline-block;
+    height: 1em;
+    line-height: 1;
+    text-align: left;
+    vertical-align: -0.25ex;
+    overflow: hidden;
+}
+
+.dot::before {
+    display: block;
+    content: "...\A..\A.";
+    white-space: pre-wrap;
+    animation: dot1 3s infinite step-start both;
+}
+
+@keyframes dot1 {
+    33% {
+        transform: translateY(-2em);
+    }
+    66% {
+        transform: translateY(-1em);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    0% {
+        transform: rotate(-360deg);
+    }
+}
+
+// 切换按钮
+.switch-nav {
+    margin: 25px auto;
+}
+
+.button {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    z-index: 10;
+    font-size: 20px;
+    &.small {
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+    }
+    span {
+        display: inline-block;
+        padding: 0 25px;
+        border: 1px solid #58607c;
+        border-right: none;
+        text-align: center;
+        color: #58607c;
+        cursor: pointer;
+        &:last-child {
+            border-right: 1px solid #58607c;
+        }
+        &.active {
+            color: #ffffff;
+            border: 1px solid #329ef1;
+            background: #102550;
+        }
+    }
+}
+
+// 滚动条
+.scrollbar {
+    /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        background-color: transparent;
+    }
+    /*定义滚动条轨道 内阴影+圆角*/
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px transparent;
+        border-radius: 10px;
+        background-color: #777;
+    }
+    /*定义滑块 内阴影+圆角*/
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px transparent;
+        background-color: #ccc;
+    }
+}
+
+.scrollbar1 {
+    /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        background-color: transparent;
+    }
+    /*定义滚动条轨道 内阴影+圆角*/
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px transparent;
+        border-radius: 10px;
+        background-color: transparent;
+    }
+    /*定义滑块 内阴影+圆角*/
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px transparent;
+        background-color: transparent;
+    }
+}
+
+.el-form{
+    .el-form-item{
+        .el-form-item_content{
+            position: relative;
+            .el-form-item_error{
+                position: absolute;
+                top: 22%;
+                left: 0;
+                right: -100%;
+                bottom: 0;
+            }
+        }
+    }
+}
